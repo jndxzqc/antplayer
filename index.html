@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/player.css">
+	<script type="text/javascript" src="./js/require.2.1.9-jquery.2.0.3-underscore.1.5.2-backbone.1.0.0.js"></script>
+</head>
+<body>
+	<h3>html5--蚂蚁播放器</h3>
+	<div class="player" id="player" style="width:960px;height:540px;"></div>
+
+	<script type="text/javascript">
+	require(["./js/player"], function(player){
+		var file = "http://hc.yinyuetai.com/uploads/videos/common/DB9B0150649CAB6DCEAD94329FFE2C1C.flv?sc=70d60d6826ac6af1&br=780&vid=2394034&aid=1559&area=KR&vst=0";
+		var ele = new player.MediaPlayer();
+            ele.initialize(file, {
+                autoplay: true,
+                volume: 0.5,
+                seekEnabled: true,
+                clickBackground: true
+            }, $("#player"));
+            ele.setupVideo();
+		})
+	</script>
+</body>
+</html>
